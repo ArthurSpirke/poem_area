@@ -1,0 +1,46 @@
+<h4>Author name</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @poem.author.present? ? @poem.author.name : 'Unknown author' %>
+  </div>
+</div>
+
+<h4>Title</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @poem.title %>
+  </div>
+</div>
+
+<h4>Metaphor</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @poem.metaphor %>
+  </div>
+</div>
+
+<h4>Content</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @poem.content %>
+  </div>
+</div>
+
+<h4>Published?</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @poem.published? ? 'Yes' : 'No' %>
+  </div>
+</div>
+
+<% if @poem.published? %>
+  <h4>Publish date</h4>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= @poem.publish_date %>
+    </div>
+  </div>
+<% end %>
+
+<h4>Tags</h4>
+<%= render partial: 'tags/object_tags', locals: { target_object: @poem, helper_path: "poems_path" } %>

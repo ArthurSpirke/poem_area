@@ -1,0 +1,38 @@
+<h4>Name</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @author.name %>
+  </div>
+</div>
+
+<h4>Biography</h4>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= @author.biography %>
+  </div>
+</div>
+
+<h4>Poems</h4>
+
+<% if @author.poems.count == 0 %>
+  0 poems
+<% else %>
+  <% @author.poems.each do |poem| %>
+    <%= link_to poem.title, poem_path(poem) %><br>
+  <% end %>
+<% end %>
+
+<h4>Short stories</h4>
+
+<% if @author.short_stories.count == 0 %>
+  0 short stories
+<% else %>
+  <% @author.short_stories.each do |short_story| %>
+    <%= link_to short_story.title, short_story_path(short_story) %><br>
+  <% end %>
+<% end %>
+
+<h4>Tags</h4>
+
+<%= render partial: 'tags/object_tags', locals: { target_object: @author, helper_path: "authors_path" } %>

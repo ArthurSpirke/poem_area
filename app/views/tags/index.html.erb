@@ -1,0 +1,29 @@
+<h3>Authors</h3>
+
+<div class="row">
+  <div class="col-xs-8">
+    <% Tag.grouped_authors_connections.each do |title, counter| %>
+      <%= link_to "#{title} (#{counter})", authors_path(tag_title: title) %><br>
+    <% end %>
+  </div>
+</div>
+
+<h3>Poems</h3>
+
+<div class="row">
+  <div class="col-xs-8">
+    <% Tag.grouped_poems_connections.each do |title, counter| %>
+      <%= link_to "#{title} (#{counter})", poems_path(tag_title: title) %><br>
+    <% end %>
+  </div>
+</div>
+
+<h3>Short stories</h3>
+
+<div class="row">
+  <div class="col-xs-8">
+    <% Tag.grouped_short_stories_connections.each do |title, counter| %>
+      <%= link_to "#{title} (#{counter})", short_stories_path(tag_title: title) %><br>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-xs-8">
+    <% target_object.tag_connections.ordered_by_weigth.each do |tag_connection| %>
+      <%= link_to tag_connection.tag.title, send(helper_path, tag_title: tag_connection.tag.title) %><br>
+    <% end %>
+  </div>
+</div>

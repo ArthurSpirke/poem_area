@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to 'New', new_poem_path %>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Metaphor</th>
+    <th>Content</th>
+    <th>Published?</th>
+    <th>Publish date</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @poems.each do |poem| %>
+    <tr>
+      <td><%= poem.author ? link_to(poem.author.name, poem_path(poem.author)) : 'Unknown author' %></td>
+      <td><%= truncate(poem.title, length: 35) %></td>
+      <td><%= truncate(poem.metaphor, length: 65) %></td>
+      <td><%= truncate(poem.content, length: 65) %></td>
+      <td><%= poem.published? ? 'Yes' : 'No' %></td>
+      <td><%= poem.publish_date %></td>
+      <td><%= link_to 'Show', poem_path(poem) %></td>
+      <td><%= link_to 'Edit', edit_poem_path(poem) %></td>
+      <td><%= link_to 'Delete', poem_path(poem), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

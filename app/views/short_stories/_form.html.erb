@@ -1,0 +1,47 @@
+<%= simple_form_for @short_story do |f| %>
+
+  <h4>Author</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= f.association :author, as: :select, label: false, include_blank: 'Select author' %>
+    </div>
+  </div>
+
+  <h4>Title</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :title, label: false %>
+    </div>
+  </div>
+
+  <h4>Description</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :description, label: false %>
+    </div>
+  </div>
+
+  <h4>Content</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :content, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :published %>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

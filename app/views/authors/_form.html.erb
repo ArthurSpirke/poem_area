@@ -1,0 +1,25 @@
+<%= simple_form_for @author do |f| %>
+
+  <h4>Name</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :name, label: false %>
+    </div>
+  </div>
+
+  <h4>Biography</h4>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.input :biography, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+    <%= f.button :submit %>
+    </div>
+  </div>
+  
+<% end %>
